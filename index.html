@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luna Beauty Store | Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="top-banner">✨ Demo de tienda de cosméticos · Envíos a toda Colombia ✨</div>
+
+  <header class="header" id="inicio">
+    <nav class="navbar">
+      <a href="#inicio" class="logo">
+        <span class="logo-icon">LB</span>
+        <span>Luna Beauty</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#productos">Productos</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <button class="cart-btn" id="openCart" aria-label="Abrir carrito">
+        🛍️ <span id="cartCount">0</span>
+      </button>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Makeup · skincare · accesorios</p>
+        <h1>Cosméticos para brillar todos los días.</h1>
+        <p class="hero-text">
+          Descubre una colección demo con productos inspirados en tus imágenes:
+          primer, pestañas, sombras, blush, gloss y más.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#productos">Comprar ahora</a>
+          <a class="btn ghost" href="https://wa.me/573001234567?text=Hola%20Luna%20Beauty%2C%20quiero%20informaci%C3%B3n%20de%20los%20productos" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="floating-card card-one">
+          <span>Nuevo</span>
+          <strong>Gloss Pink</strong>
+        </div>
+        <img src="assets/producto-7.svg" alt="Gloss Pink" />
+        <div class="floating-card card-two">
+          <span>Desde</span>
+          <strong>$18.900</strong>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="benefits" id="beneficios">
+      <article>
+        <span>💗</span>
+        <h3>Productos seleccionados</h3>
+        <p>Una vitrina linda y ordenada para mostrar tus cosméticos favoritos.</p>
+      </article>
+      <article>
+        <span>🚚</span>
+        <h3>Envíos nacionales</h3>
+        <p>Diseño listo para adaptar a ventas en pesos colombianos.</p>
+      </article>
+      <article>
+        <span>💬</span>
+        <h3>Pedido por WhatsApp</h3>
+        <p>El carrito prepara un mensaje automático con los productos elegidos.</p>
+      </article>
+    </section>
+
+    <section class="products-section" id="productos">
+      <div class="section-heading">
+        <p class="eyebrow">Catálogo demo</p>
+        <h2>Productos destacados</h2>
+        <p>Agrega productos al carrito y envía el pedido por WhatsApp.</p>
+      </div>
+
+      <div class="filters">
+        <div class="search-box">
+          <span>🔎</span>
+          <input type="text" id="searchInput" placeholder="Buscar producto..." />
+        </div>
+        <select id="categoryFilter" aria-label="Filtrar por categoría">
+          <option value="Todos">Todas las categorías</option>
+          <option value="Rostro">Rostro</option>
+          <option value="Ojos">Ojos</option>
+          <option value="Labios">Labios</option>
+          <option value="Accesorios">Accesorios</option>
+        </select>
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <section class="promo">
+      <div>
+        <p class="eyebrow">Oferta demo</p>
+        <h2>Arma tu kit glam</h2>
+        <p>Combina primer + paleta + gloss y crea un look completo para cualquier ocasión.</p>
+      </div>
+      <a class="btn primary" href="#productos">Ver catálogo</a>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="section-heading">
+        <p class="eyebrow">Contáctanos</p>
+        <h2>¿Quieres hacer un pedido?</h2>
+        <p>Usa el botón flotante de WhatsApp o agrega productos al carrito.</p>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">Tu compra</p>
+        <h2>Carrito</h2>
+      </div>
+      <button id="closeCart" class="icon-btn" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="total-row">
+        <span>Total</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button class="btn primary full" id="sendWhatsApp">Pedir por WhatsApp</button>
+      <button class="btn clear full" id="clearCart">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/573001234567?text=Hola%20Luna%20Beauty%2C%20quiero%20hacer%20un%20pedido"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contactar por WhatsApp">
+    <span>💬</span>
+  </a>
+
+  <footer class="footer">
+    <p>© 2026 Luna Beauty Store · Página demo creada con HTML, CSS y JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
